@@ -44,8 +44,9 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ localityId }) => {
         dispatch(setCity(localityName));
         dispatch(setLocalityId(localityId));
         setLoading(false);
-      } catch (error) {
-        setError(error.message || 'An unexpected error occurred.');
+      } catch (err) {
+        const errorMessage = err instanceof Error ? err.message : 'An unexpected error occurred.';
+        setError(errorMessage);
         setLoading(false);
       }
     };
