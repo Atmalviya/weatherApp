@@ -1,11 +1,18 @@
+'use client'; 
+
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import { localityData } from '../utils/localityData';
+import { useRouter } from 'next/navigation'; 
+import { localityData } from '@/app/utils/localityData';
+
+type Locality = {
+  localityId: string;
+  localityName: string;
+};
 
 const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState([]);
-  const router = useRouter();
+  const [suggestions, setSuggestions] = useState<Locality[]>([]);
+  const router = useRouter(); 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
