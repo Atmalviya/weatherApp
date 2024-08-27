@@ -12,3 +12,26 @@ button {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
+
+.custom-scrollbar {
+  scrollbar-width: thin; 
+  scrollbar-color: #5724e2 transparent; 
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #3507b3; 
+}
+

@@ -62,7 +62,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ initialCityName = '' }) => {
       </div>
       {query && filteredSuggestions.length > 0 && (
         <ul
-          className="absolute w-full bg-white border border-gray-300 rounded-lg mt-2 max-h-60 overflow-y-auto shadow-lg z-50"
+          className="absolute w-full bg-white border border-gray-300 rounded-lg mt-2 max-h-60 overflow-y-auto shadow-lg z-50 custom-scrollbar"
           role="listbox"
         >
           {filteredSuggestions.map((suggestion) => (
