@@ -5,9 +5,6 @@ import { RootState } from '@/redux/store';
 import { setWeatherData, setLocalityId, setCity } from '@/redux/weatherSlice';
 import { localityData } from '@/app/utils/localityData';
 
-// Import dynamic weather icons
-import { WiDaySunny, WiCloudy, WiRain, WiSnow, WiThunderstorm } from 'react-icons/wi';
-
 interface WeatherCardProps {
   localityId: string;
 }
@@ -56,11 +53,32 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ localityId }) => {
     fetchWeatherData();
   }, [localityId, dispatch, localityName]);
 
+  if (loading) {
+    return (
+      <div className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-xl max-w-sm w-full mx-auto animate-pulse">
+        <div className="text-center mb-4">
+        <h2 className="text-3xl font-bold">{city}</h2>
+        <p className="text-md font-light">{new Date().toLocaleDateString()}</p>
+      </div>
+        <div className="flex flex-col items-center mb-4">
+          <p className="text-6xl font-extrabold">...</p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+        </div>
+      </div>
+    );
+  }
+
   if (error) {
     return <div className="p-4 text-red-600">Error: {error}</div>;
   }
 
-  if (!weatherData) {
+  if (!weatherData.temperature) {
     return <div className="p-4 text-gray-600">No weather data available.</div>;
   }
 
@@ -68,30 +86,30 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ localityId }) => {
     <div className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-xl max-w-sm w-full mx-auto transform hover:scale-105 transition-transform duration-300 ease-in-out">
       <div className="text-center mb-4">
         <h2 className="text-3xl font-bold">{city}</h2>
-        <p className="text-md font-light">{loading ? 'Loading...' : new Date().toLocaleDateString()}</p>
+        <p className="text-md font-light">{new Date().toLocaleDateString()}</p>
       </div>
 
       <div className="flex flex-col items-center mb-4">
         <div className="text-center mt-4">
-          <p className="text-6xl font-extrabold">{loading ? '...' : `${weatherData.temperature}°C`}</p>
+          <p className="text-6xl font-extrabold">{`${weatherData.temperature}°C`}</p>
         </div>
       </div>
 
       <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
         <p>
-          <span className="font-semibold">Humidity:</span> {loading ? '...' : `${weatherData.humidity}%`}
+          <span className="font-semibold">Humidity:</span> {`${weatherData.humidity}%`}
         </p>
         <p>
-          <span className="font-semibold">Wind Speed:</span> {loading ? '...' : `${weatherData.wind_speed} m/s`}
+          <span className="font-semibold">Wind Speed:</span> {`${weatherData.wind_speed} m/s`}
         </p>
         <p>
-          <span className="font-semibold">Wind Direction:</span> {loading ? '...' : `${weatherData.wind_direction}°`}
+          <span className="font-semibold">Wind Direction:</span> {`${weatherData.wind_direction}°`}
         </p>
         <p>
-          <span className="font-semibold">Rain Intensity:</span> {loading ? '...' : `${weatherData.rain_intensity} mm/h`}
+          <span className="font-semibold">Rain Intensity:</span> {`${weatherData.rain_intensity} mm/h`}
         </p>
         <p>
-          <span className="font-semibold">Rain Accumulation:</span> {loading ? '...' : `${weatherData.rain_accumulation} mm`}
+          <span className="font-semibold">Rain Accumulation:</span> {`${weatherData.rain_accumulation} mm`}
         </p>
       </div>
     </div>
