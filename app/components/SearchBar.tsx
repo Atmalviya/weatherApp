@@ -38,18 +38,18 @@ const SearchBar: React.FC<AutocompleteProps> = ({ initialCityName  }) => {
 
   return (
     <div className="relative w-full max-w-lg mx-auto">
-      <div className="flex items-center w-full p-4 border border-gray-300 rounded-full shadow-sm focus-within:shadow-md transition-shadow duration-300">
+      <div className="flex items-center w-full p-4 border border-blue-300 rounded-full shadow-sm focus-within:shadow-md transition-shadow duration-300">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={initialCityName ? initialCityName : "Search for a locality..."}
-          className="flex-grow px-4  text-gray-700 bg-transparent outline-none placeholder-gray-400"
+          className="flex-grow px-4  text-black-400 bg-transparent outline-none placeholder-blue-300"
         />
         {query && (
           <IoMdClose
             onClick={clearInput}
-            className="text-xl text-slate-500 cursor-pointer hover:text-black mr-3"
+            className="text-xl text-black cursor-pointer hover:text-black mr-3"
           />
         )}
       </div>

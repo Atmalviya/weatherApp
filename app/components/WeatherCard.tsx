@@ -75,11 +75,47 @@ const WeatherCard: React.FC<WeatherCardProps> = ({ localityId }) => {
   }
 
   if (error) {
-    return <div className="p-4 text-red-600">Error: {error}</div>;
+    return (
+      <div className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-xl max-w-sm w-full mx-auto animate-pulse">
+        <div className="text-center mb-4">
+        <h2 className="text-3xl font-bold">{city}</h2>
+        <p className="text-md font-light">{new Date().toLocaleDateString()}</p>
+      </div>
+        <div className="flex flex-col items-center mb-4">
+          <p className="text-6xl font-extrabold">Something bad happened</p>
+        </div>
+        <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+        </div>
+      </div>
+    )
   }
 
   if (!weatherData.temperature) {
-    return <div className="p-4 text-gray-600">No weather data available.</div>;
+    return (
+      <div className="p-6 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow-xl max-w-sm w-full mx-auto animate-pulse">
+        <div className="text-center mb-4">
+        <h2 className="text-3xl font-bold">{city}</h2>
+        <p className="text-md font-light">{new Date().toLocaleDateString()}</p>
+      </div>
+      <div className="flex flex-col items-center mb-4">
+        <div className="text-center mt-4">
+          <p className="text-6xl font-extrabold">No data available</p>
+        </div>
+      </div>
+        <div className="grid grid-cols-2 gap-4 mt-4 text-sm">
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+          <p>...</p>
+        </div>
+      </div>
+    );;
   }
 
   return (
