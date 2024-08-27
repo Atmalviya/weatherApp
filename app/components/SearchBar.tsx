@@ -16,7 +16,7 @@ type AutocompleteProps = {
   initialCityName?: string;
 };
 
-const Autocomplete: React.FC<AutocompleteProps> = ({ initialCityName  }) => {
+const SearchBar: React.FC<AutocompleteProps> = ({ initialCityName  }) => {
   const dispatch = useDispatch();
   const [query, setQuery] = useState(``);
   const router = useRouter();
@@ -70,4 +70,4 @@ const Autocomplete: React.FC<AutocompleteProps> = ({ initialCityName  }) => {
   );
 };
 
-export default Autocomplete;
+export default SearchBar;
