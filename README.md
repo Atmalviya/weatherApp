@@ -1,36 +1,78 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Weather Information Application
 
-## Getting Started
+This project is a weather information application built using Next.js, TypeScript, TailwindCSS, and Redux. The application allows users to search for localities and view current weather data, providing a clean and intuitive interface modeled after the Google homepage.
 
-First, run the development server:
+## Table of Contents
+
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Setup Instructions](#setup-instructions)
+- [Deployment](#deployment)
+## Features
+
+- **Search Interface**: Autocomplete functionality that suggests localities as the user types.
+- **Weather Data Display**: Detailed weather information fetched from the Weatherunion API.
+- **Responsive Design**: The application is fully responsive, working seamlessly across all device sizes.
+- **State Management**: Managed using Redux for a predictable state container.
+- **Optimized UI/UX**: Styled with TailwindCSS to provide a modern, clean, and responsive user interface.
+
+## Technology Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [TailwindCSS](https://tailwindcss.com/)
+- **State Management**: [Redux](https://redux.js.org/)
+- **API**: [Weatherunion API](https://www.weatherunion.com/)
+
+## Setup Instructions
+
+### Prerequisites
+
+- Node.js (v14.x or later)
+- npm or yarn
+- A Weatherunion API key (available from [Weatherunion](https://www.weatherunion.com/))
+
+### Installation
+
+## Run Locally
+
+Clone the project
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+  git clone https://github.com/Atmalviya/weatherApp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Go to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+  cd weatherApp
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install dependencies
 
-## Learn More
+```bash
+  npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Start the server
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Project is deplyed on vercel and my VPS
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+  https://weather-app.atmalviya.cloud/
+  ```
+
+
+```bash
+  https://weatherapp-nextts.vercel.app/
+```
+
+
+
